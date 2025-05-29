@@ -3,21 +3,21 @@ Service:
   DeployMetadata:
     SupplierDeployMetadata:
       SupplierTemplateConfigs:
-        - Name: 选择ECS实例（Linux）
-          Url: ros_templates/template-select-ecs.yaml
-          PredefinedParameters: []
-        - Name: 新建ECS实例
-          Url: ros_templates/template-create-ecs.yaml
-          PredefinedParameters: []
-    TemplateConfigs:
       - Name: 选择ECS实例（Linux）
         Url: ros_templates/template-select-ecs.yaml
         PredefinedParameters: []
-        DeployScene: ECS
       - Name: 新建ECS实例
         Url: ros_templates/template-create-ecs.yaml
         PredefinedParameters: []
-        DeployScene: ECS
+    TemplateConfigs:
+    - Name: 选择ECS实例（Linux）
+      Url: ros_templates/template-select-ecs.yaml
+      PredefinedParameters: []
+      DeployScene: ECS
+    - Name: 新建ECS实例
+      Url: ros_templates/template-create-ecs.yaml
+      PredefinedParameters: []
+      DeployScene: ECS
     NetworkMetadata:
       EnablePrivateVpcConnection: false
       EnableReversePrivateVpcConnection: false
@@ -33,18 +33,19 @@ Service:
         EnablePrometheus: false
   ServiceType: private
   ServiceInfo:
-    - Agreements: []
-      Image: resources/icons/service_logo.png
-      Locale: zh-CN
-      Name: Node.js运行环境
-      ShortDescription: Node.js发布于2009年5月，由Ryan Dahl开发，是一个基于Chrome V8引擎的JavaScript运行环境。
-      Softwares: []
-    - Agreements: []
-      Image: resources/icons/service_logo.png
-      Locale: zh-CN
-      Name: Node.js Runtime Environment
-      ShortDescription: Node.js was released in May 2009 and developed by Ryan Dahl. It is a JavaScript runtime environment based on the Chrome V8 engine.
-      Softwares: []
+  - Locale: zh-CN
+    Name: Node.js 运行环境
+    ShortDescription: Node.js发布于2009年5月，由Ryan Dahl开发，是一个基于Chrome V8引擎的JavaScript运行环境。
+    Image: 
+      https://service-info-public.oss-cn-hangzhou.aliyuncs.com/5141674772595072/service-image/f17f7ed3-80f3-4b4e-b902-704a274893d1.png
+    Softwares: []
+  - Locale: en-US
+    Name: Node.js Runtime Environment
+    ShortDescription: Node.js was released in May 2009 and developed by Ryan Dahl.
+      It is a JavaScript runtime environment based on the Chrome V8 engine.
+    Image: 
+      https://service-info-public.oss-cn-hangzhou.aliyuncs.com/5141674772595072/service-image/f17f7ed3-80f3-4b4e-b902-704a274893d1.png
+    Softwares: []
   ShareType: Public
   ApprovalType: Manual
 Artifact: {}
